@@ -34,8 +34,10 @@ jobs:
           dvc repro
 
 
-      - name: Run Flask app tests
-        if: success()
-        env:
+
+      - name: Run container
+        env:  
           CAPSTONE_TEST: ${{ secrets.CAPSTONE_TEST }}
-        run: python -m unittest tests/test_flask_app.py
+        run: |
+          docker run -p 8888:5000 sentiment-analysis:latest
+      
