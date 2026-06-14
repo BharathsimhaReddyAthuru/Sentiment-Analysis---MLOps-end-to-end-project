@@ -35,6 +35,10 @@ jobs:
 
 
 
+      - name: Build image
+        run: docker build -t sentiment-analysis:latest .
+      
+      
       - name: Run container
         env:  
           CAPSTONE_TEST: ${{ secrets.CAPSTONE_TEST }}
