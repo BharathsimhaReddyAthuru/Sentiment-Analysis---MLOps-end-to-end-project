@@ -39,9 +39,9 @@ jobs:
         run: docker build -t sentiment-analysis:latest .
       
       
-      - name: Run container
-        env:  
-          CAPSTONE_TEST: ${{ secrets.CAPSTONE_TEST }}
-        run: |
-          docker run -p 8888:5000 sentiment-analysis:latest
+      # - name: Run container
+      #   env:  
+      #     CAPSTONE_TEST: ${{ secrets.CAPSTONE_TEST }}
+      #   run: |
+      #     docker run -p 8888:5000 sentiment-analysis:latest
       
